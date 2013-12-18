@@ -543,6 +543,7 @@ public class practica3 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     String letraBuscada = "A";
+   
     
         int letraJl = letra.indexOf(letraBuscada);
         int letraTb = letra2.indexOf(letraBuscada);
