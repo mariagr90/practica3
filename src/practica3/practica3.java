@@ -552,6 +552,7 @@ public class practica3 extends javax.swing.JFrame {
         if(letra.indexOf(letraBuscada)>-1&&letra2.indexOf(letraBuscada)>-1){
             jLabel8.setText("Acierto");
         }
+        
         //String letra = "";
        // String letra2 = "";
         
