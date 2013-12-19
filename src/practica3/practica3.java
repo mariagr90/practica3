@@ -16,14 +16,15 @@ import javax.swing.ImageIcon;
  * @author Maria
  */
 public class practica3 extends javax.swing.JFrame {
+
     String letra = "";
     String letra2 = "";
-    Random generadorAleatorio = new Random();
-
+    int nivel = 4;
+    int aciertos=0;
     
     public practica3() {
         initComponents();
-
+//Desactivamos los jTogglebutton desde el inicio en el boton uno tambien estaran desactivados
         jToggleButton1.setEnabled(false);
         jToggleButton2.setEnabled(false);
         jToggleButton3.setEnabled(false);
@@ -53,6 +54,7 @@ public class practica3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -83,33 +85,58 @@ public class practica3 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 102));
 
+        jPanel2.setBackground(new java.awt.Color(204, 255, 102));
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel1.setOpaque(true);
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel2.setOpaque(true);
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel3.setOpaque(true);
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel4.setOpaque(true);
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel6.setOpaque(true);
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel5.setOpaque(true);
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
         jLabel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel7.setOpaque(true);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -147,6 +174,7 @@ public class practica3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel4.setBackground(new java.awt.Color(204, 255, 102));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Z.png"))); // NOI18N
@@ -252,6 +280,7 @@ public class practica3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Empezar.setText("Empezar");
@@ -275,21 +304,24 @@ public class practica3 extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("jLabel5");
+        jLabel8.setText("Aciertos:");
+
+        jLabel9.setBackground(new java.awt.Color(204, 255, 102));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Empezar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Empezar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -303,50 +335,53 @@ public class practica3 extends javax.swing.JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void EmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpezarActionPerformed
+        //Al igual que antes los jTogglebutton estaran desactivados en el boton empezar tal y como dice el ejercicio
         jToggleButton1.setEnabled(false);
         jToggleButton2.setEnabled(false);
         jToggleButton3.setEnabled(false);
@@ -363,12 +398,21 @@ public class practica3 extends javax.swing.JFrame {
         jToggleButton14.setEnabled(false);
         jToggleButton15.setEnabled(false);
         jToggleButton16.setEnabled(false);
+        jLabel8.setText("Aciertos:");
 
-       generadorAleatorio=new Random();;
+        //Creamos un generador aleatorio de numeros
+        Random generadorAleatorio = new Random();
+
+        //Tomamos el String vacio declarado al inicio al cual le iremos concatenando los casos que tenemos a continuacion 
         letra = "";
 
-        for (int contador = 0; contador < 4; contador++) {
-            int numeroLetra = generadorAleatorio.nextInt(16);
+        //Creamos un for donde se realizara lo mismo tantas veces como nivel en el que nos encontremos:
+        for (int contador = 0; contador < nivel; contador++) {
+          
+            int numeroLetra = generadorAleatorio.nextInt(16);  
+          
+//            while ();
+
             switch (numeroLetra) {
                 case 0:
                     letra += "A";
@@ -418,32 +462,65 @@ public class practica3 extends javax.swing.JFrame {
                 case 15:
                     letra += "P";
                     break;
-
             }
         }
+
+
+        //creamos un switch con los distintos niveles para que en el caso de que el numero de aciertos sea igual al numero de imagenes, el juego suba de nivel
         try {
-            jLabel1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(0) + ".png"))));
-            jLabel2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(1) + ".png"))));
-            jLabel3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(2) + ".png"))));
-            jLabel4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(3) + ".png"))));
+            switch (nivel) {
+                case 4:
+                    jLabel1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(0) + ".png"))));
+                    jLabel2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(1) + ".png"))));
+                    jLabel3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(2) + ".png"))));
+                    jLabel4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(3) + ".png"))));
+                    break;
+                case 5:
+                    jLabel1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(0) + ".png"))));
+                    jLabel2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(1) + ".png"))));
+                    jLabel3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(2) + ".png"))));
+                    jLabel4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(3) + ".png"))));
+                    jLabel5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(4) + ".png"))));
+                    break;
+                case 6:
+                    jLabel1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(0) + ".png"))));
+                    jLabel2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(1) + ".png"))));
+                    jLabel3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(2) + ".png"))));
+                    jLabel4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(3) + ".png"))));
+                    jLabel5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(4) + ".png"))));
+                    jLabel6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(5) + ".png"))));
+                    break;
+                case 7:
+                    jLabel1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(0) + ".png"))));
+                    jLabel2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(1) + ".png"))));
+                    jLabel3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(2) + ".png"))));
+                    jLabel4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(3) + ".png"))));
+                    jLabel5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(4) + ".png"))));
+                    jLabel6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(5) + ".png"))));
+                    jLabel7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra.charAt(6) + ".png"))));
+                    break;
+            }
         } catch (IOException ex) {
             Logger.getLogger(practica3.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-
-
     }//GEN-LAST:event_EmpezarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        //Al pulsar el boton de Recordar , las imagenes que posea cada jLabel seran sustituidos por la imagen "Z"
         try {
             jLabel1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
             jLabel2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
             jLabel3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
             jLabel4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
+            jLabel5.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
+            jLabel6.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
+            jLabel7.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/Z.png"))));
         } catch (IOException ex) {
             Logger.getLogger(practica3.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        //Los jToggleButton pasaran a estar activados y mostraran su imagen aleatoria
         jToggleButton1.setEnabled(true);
         jToggleButton2.setEnabled(true);
         jToggleButton3.setEnabled(true);
@@ -461,9 +538,14 @@ public class practica3 extends javax.swing.JFrame {
         jToggleButton15.setEnabled(true);
         jToggleButton16.setEnabled(true);
 
-       generadorAleatorio = new Random();
-       letra2 = "";
 
+        //Creamos el generador de numeros
+        Random generadorAleatorio = new Random();
+
+        ////Tomamos el String vacio declarado al inicio al cual le iremos concatenando los casos que tenemos a continuacion 
+        letra2 = "";
+
+        //Creamos un for donde se realizara lo mismo tantas veces como imagenes hay para mostrar:
         for (int contador = 0; contador < 16; contador++) {
             int numeroLetra = generadorAleatorio.nextInt(16);
             switch (numeroLetra) {
@@ -518,6 +600,9 @@ public class practica3 extends javax.swing.JFrame {
 
             }
         }
+
+        /*tras generar la cadena String letra2, asignaremos a cada boton la imagen que deba mostrar teniendo en cuenta su posicion en la cadena , es decir al jTogglebutton le asignaremos el primer caracter de la cadena(0),
+         al segundo jT, el segundo valor de la cadena y asi sucesivamente */
         try {
             jToggleButton1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra2.charAt(0) + ".png"))));
             jToggleButton2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource("/imagenes/" + letra2.charAt(1) + ".png"))));
@@ -542,30 +627,101 @@ public class practica3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    String letraBuscada = "A";
-   
-    
-        int letraJl = letra.indexOf(letraBuscada);
-        int letraTb = letra2.indexOf(letraBuscada);
-        jTextArea1.append(String.valueOf(letraJl));
-        jTextArea1.append(String.valueOf(letraTb));
-        if(letra.indexOf(letraBuscada)>-1&&letra2.indexOf(letraBuscada)>-1){
-            jLabel8.setText("Acierto");
+        //creamos un contador de aciertos , el cual nos servira mas tarde para saber si pasaremos de nivel o nos quedaremos en el que estamos
+        aciertos = 0;
+
+        /*Crearemos condiciones para cada jTogglebutton en las que comprobara si el boton esta accionado primero y despues comparara si la cadena letra posee un caracter de los
+         asignados anteriormente y si la cadena letra2 tambien lo tiene , independientemente de su posicion , la condicion es que sea mayor  igual que cero, ya que si nos diera 
+         -1 ese caracter no se encontraria en los jLabel, por tanto se contaria como un error, si estas condiciones se cumplen, el contador de aciertos se incrementara:*/
+        if (jToggleButton1.isSelected() && letra.indexOf(letra2.charAt(0)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton1.setEnabled(false);
         }
-        
-        //String letra = "";
-       // String letra2 = "";
-        
+        if (jToggleButton2.isSelected() && letra.indexOf(letra2.charAt(1)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton2.setEnabled(false);
+        }
+        if (jToggleButton3.isSelected() && letra.indexOf(letra2.charAt(2)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton3.setEnabled(false);
+        }
+        if (jToggleButton4.isSelected() && letra.indexOf(letra2.charAt(3)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton4.setEnabled(false);
+        }
+        if (jToggleButton5.isSelected() && letra.indexOf(letra2.charAt(4)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton5.setEnabled(false);
+        }
+        if (jToggleButton6.isSelected() && letra.indexOf(letra2.charAt(5)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton6.setEnabled(false);
+        }
+        if (jToggleButton7.isSelected() && letra.indexOf(letra2.charAt(6)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton7.setEnabled(false);
+        }
+        if (jToggleButton8.isSelected() && letra.indexOf(letra2.charAt(7)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton8.setEnabled(false);
+        }
+        if (jToggleButton9.isSelected() && letra.indexOf(letra2.charAt(8)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton9.setEnabled(false);
+        }
+        if (jToggleButton10.isSelected() && letra.indexOf(letra2.charAt(9)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton10.setEnabled(false);
+        }
+        if (jToggleButton11.isSelected() && letra.indexOf(letra2.charAt(10)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton11.setEnabled(false);
+        }
+        if (jToggleButton12.isSelected() && letra.indexOf(letra2.charAt(11)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton12.setEnabled(false);
+        }
+        if (jToggleButton13.isSelected() && letra.indexOf(letra2.charAt(12)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton13.setEnabled(false);
+        }
+        if (jToggleButton14.isSelected() && letra.indexOf(letra2.charAt(13)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton14.setEnabled(false);
+        }
+        if (jToggleButton15.isSelected() && letra.indexOf(letra2.charAt(14)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton15.setEnabled(false);
+        }
+        if (jToggleButton16.isSelected() && letra.indexOf(letra2.charAt(15)) >= 0) {
+            aciertos++;
+        } else {
+            jToggleButton16.setEnabled(false);
+        }
 
-        //  if(letra.indexOf(letraBuscada)==0&&letra2.indexOf(letraBuscada)==0){
-        //    jLabel8.setText("1 acierto");
-        //}
 
+        //en este jLabel se mostraran los aciertos comprobados de las condiciones anteriores
+        jLabel9.setText(String.valueOf(aciertos));
 
-
-        //  if(letraBuscada1==0&&letraBuscada2==0){
-        //  jLabel8.setText("1 acierto");
-        //   }
+        //Creamos una condicion en la que compare el numero de aciertos con el numero de nivel, en el caso de que se cumpla , el nivel se incrementara, si no , se quedara en el mismo nivel
+        if (aciertos == nivel) {
+            nivel++;
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -614,11 +770,11 @@ public class practica3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton10;
     private javax.swing.JToggleButton jToggleButton11;
